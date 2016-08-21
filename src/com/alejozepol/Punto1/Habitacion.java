@@ -17,7 +17,7 @@ public class Habitacion {
     private boolean calefaccion;
     private boolean disponible;
     private int tipo;
-     private Huesped clientes;
+    private Huesped clientes;
 
 //    private final String tipoHabitacion[] = {"Sencillo", "Doble","Suite"};
     public Habitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
@@ -87,5 +87,4 @@ public class Habitacion {
                 + "\n calefaccion=" + calefaccion + "\n disponible="
                 + disponible + "\n tipo=" + tipo;
     }
-
 }

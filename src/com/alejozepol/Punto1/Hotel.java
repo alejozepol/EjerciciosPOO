@@ -9,6 +9,7 @@ import com.alejozepol.Punto1.Habitacion;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,18 +24,32 @@ public class Hotel {
     private int telefono;
     private List<Habitacion> habitacion;
     public int indice;
-    
-           
-      public void mostrar(){
-          Iterator<Habitacion> iteHabitacion = habitacion.iterator();
-       while (iteHabitacion.hasNext()) {
-                Habitacion elemento = iteHabitacion.next();
+    int num=0;
 
-                System.out.println(elemento);
-            }
-      }      
-            
+    public List<Habitacion> getHabitacion() {
+        return habitacion;
+    }
 
+    public void setHabitacion(List<Habitacion> habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public void mostrar() {
+        Iterator<Habitacion> iteHabitacion = habitacion.iterator();
+        while (iteHabitacion.hasNext()) {
+            Habitacion elemento = iteHabitacion.next();
+
+            System.out.println(elemento);
+        }
+    }
 
     public int getIndice() {
         return indice;
@@ -43,8 +58,6 @@ public class Hotel {
     public void setIndice(int indice) {
         this.indice = indice;
     }
-    
-   
 
     public Hotel(String direccion, String ciudad, String barrio, int telefono) {
         this.direccion = direccion;
@@ -54,15 +67,42 @@ public class Hotel {
         this.habitacion = new ArrayList<>();
 
     }
-    
 
+    public Habitacion consultarNumeroHabitacion() {
+        /**
+         * Este medetodo consulta el ArreyList de Habitaciones donde se
+         * encuentra almacenados la informaccion de las habitaciones creados
+         *
+         * @param indice el cual se encuentra solicitando por pantalla
+         *
+         */
+        System.out.println("Por Favor ingrese el indice de la Habitacion:");
+        Scanner teclado = new Scanner(System.in);
+        num = teclado.nextInt();
 
-    public  Habitacion getHabitacion() {
-        
-        return habitacion.get(indice);  
-        }
-      
-    
+        setIndice(num);
+
+        return habitacion.get(num);
+
+    }
+
+    public Habitacion getIndiceHabitacion() {
+        /**
+         * Este medetodo consulta el ArreyList de Habitaciones donde se
+         * encuentra almacenados la informaccion de las habitaciones creados
+         *
+         * @param indice el cual se encuentra solicitando por pantalla
+         *
+         */
+        System.out.println("Por Favor ingrese el indice de la Habitacion:");
+        Scanner teclado = new Scanner(System.in);
+        num = teclado.nextInt();
+
+        setIndice(num);
+
+        return habitacion.get(indice);
+
+    }
 
     public void addHabitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
         Habitacion a = new Habitacion(numeroHabitacion, numeroBaños, numeroExtencion, calefaccion, disponible, tipo);

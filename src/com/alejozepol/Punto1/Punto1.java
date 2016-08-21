@@ -29,20 +29,17 @@ public class Punto1 {
 
         
            
-        Scanner teclado = new Scanner(System.in);
-        num=teclado.nextInt();
         
-        h1.setIndice(num);
         
-        System.out.println(h1.getHabitacion());
+        System.out.println(h1.getIndiceHabitacion());
         
         h1.mostrar();
         
-        Huesped cliente1= new Huesped("jhon fredy ", "cra 34 # 20-23", "puto", "casado");
+        Huesped cliente1= new Huesped("jhon fredy ", "CR 34 20 23", "Consultor", "casado");
         
-       h1.getHabitacion().setClientes(cliente1);
+       h1.getIndiceHabitacion().setClientes(cliente1);
        
-        System.out.println( h1.getHabitacion().getClientes().toString());
+        System.out.println( cliente1);
 
     }
 

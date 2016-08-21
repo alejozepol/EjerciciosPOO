@@ -15,7 +15,7 @@ public class Huesped {
     private String direccion; 
     private String profesion; 
     private String estadioCivil;
-    private Habitacion numeroHabitacion;
+  
 
     public Huesped(String nombre, String direccion, String profesion, String estadioCivil) {
         this.nombre = nombre;
@@ -63,10 +63,8 @@ public class Huesped {
     }
     
     public void asignarHabitacion(){
-        numeroHabitacion.getNumeroHabitacion();
-        for (int i = 0; i <; i++) {
-            
-        }
+       
+        
     }
     
 }
