@@ -12,11 +12,8 @@ f.	Itere la lista imprimiendo sólo los números complejos.
 package edu.alejozepol.punto5;
 
 import edu.alejozepol.ejerciciospoo.Menu;
-import edu.alejozepol.ejerciciospoo.Principal;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
-import javax.management.openmbean.ArrayType;
 import javax.swing.JOptionPane;
 
 public class Lista {
