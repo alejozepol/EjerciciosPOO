@@ -5,12 +5,11 @@
  */
 package com.alejozepol.Punto1;
 
-import com.alejozepol.Punto1.Habitacion;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -68,7 +67,7 @@ public class Hotel {
 
     }
 
-    public Habitacion consultarNumeroHabitacion() {
+    public Habitacion consultarNumeroHabitacion(int numero) {
         /**
          * Este medetodo consulta el ArreyList de Habitaciones donde se
          * encuentra almacenados la informaccion de las habitaciones creados
@@ -76,16 +75,25 @@ public class Hotel {
          * @param indice el cual se encuentra solicitando por pantalla
          *
          */
-        System.out.println("Por Favor ingrese el indice de la Habitacion:");
-        Scanner teclado = new Scanner(System.in);
-        num = teclado.nextInt();
-
-        setIndice(num);
-
-        return habitacion.get(num);
+        for (Habitacion habitacion : habitacion) {
+            if(habitacion.getNumeroHabitacion() == numero && habitacion.isDisponible()){
+                return habitacion;
+            }
+        }
+        return null;
 
     }
-
+    
+    public boolean ocuparHabitacion(int numHabitacion, Huesped huesped){
+        Habitacion h = consultarNumeroHabitacion(numHabitacion);
+        if(h != null){
+            h.setClientes(huesped);
+            h.setDisponible(false);
+            return true;
+        }
+        return false;
+    }
+    
     public Habitacion getIndiceHabitacion() {
         /**
          * Este medetodo consulta el ArreyList de Habitaciones donde se
