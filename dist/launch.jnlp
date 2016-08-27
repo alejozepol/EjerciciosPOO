@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="file:/D:/GitHub/EjerciciosPoo/dist/" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>EjerciciosPoo</title>
+        <vendor>alejozepol</vendor>
+        <homepage href=""/>
+        <description>EjerciciosPoo</description>
+        <description kind="short">EjerciciosPoo</description>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="1.8+"/>
+        <jar href="EjerciciosPoo.jar" main="true"/>
+    </resources>
+    <application-desc main-class="edu.alejozepol.ejerciciospoo.Pincipal">
+    </application-desc>
+</jnlp>
