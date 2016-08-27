@@ -18,6 +18,7 @@ public class Habitacion {
     private boolean disponible;
     private int tipo;
     private Huesped clientes;
+    private String nombreTipo;
 
 //    private final String tipoHabitacion[] = {"Sencillo", "Doble","Suite"};
     public Habitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
@@ -80,11 +81,27 @@ public class Habitacion {
         this.numeroBaños = numeroBaños;
     }
 
+    public String asignacionTipo() {
+        if (tipo == 0) {
+            nombreTipo = "Sencilla";
+        } else if (tipo == 1) {
+            nombreTipo = "Doble";
+        } else if (tipo == 2) {
+            nombreTipo = "Suite";
+        }
+        return nombreTipo;
+    }
+
+    ;
+
     @Override
     public String toString() {
-        return "numeroHabitacion:" + numeroHabitacion + "\n numeroBaños:"
-                + numeroBaños + "\n numeroExtencion:" + numeroExtencion
-                + "\n calefaccion=" + calefaccion + "\n disponible="
-                + disponible + "\n tipo=" + tipo;
+
+        return "\n numeroHabitacion:" + numeroHabitacion
+                + "\n numeroBaños:" + numeroBaños
+                + "\n numeroExtencion:" + numeroExtencion
+                + "\n calefaccion=" + calefaccion
+                + "\n disponible=" + disponible
+                + "\n tipo=" + asignacionTipo();
     }
 }

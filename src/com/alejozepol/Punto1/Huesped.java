@@ -62,9 +62,4 @@ public class Huesped {
         this.estadioCivil = estadioCivil;
     }
     
-    public void asignarHabitacion(){
-       
-        
-    }
-    
 }

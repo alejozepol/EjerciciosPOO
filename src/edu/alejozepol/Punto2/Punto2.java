@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Esta clase es la principal del paquete la cual se utiliza para acceder al
+* desarrollo del punto 2 del taller del Programacion Orientado a Objetos del 
+* programada de ADSI- SENA 1068180
  */
 package edu.alejozepol.Punto2;
 

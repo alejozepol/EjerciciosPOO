@@ -5,7 +5,6 @@
  */
 package com.alejozepol.Punto1;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +22,7 @@ public class Hotel {
     private int telefono;
     private List<Habitacion> habitacion;
     public int indice;
-    int num=0;
+    int num = 0;
 
     public List<Habitacion> getHabitacion() {
         return habitacion;
@@ -76,24 +75,24 @@ public class Hotel {
          *
          */
         for (Habitacion habitacion : habitacion) {
-            if(habitacion.getNumeroHabitacion() == numero && habitacion.isDisponible()){
+            if (habitacion.getNumeroHabitacion() == numero && habitacion.isDisponible()) {
                 return habitacion;
             }
         }
         return null;
 
     }
-    
-    public boolean ocuparHabitacion(int numHabitacion, Huesped huesped){
+
+    public boolean ocuparHabitacion(int numHabitacion, Huesped huesped) {
         Habitacion h = consultarNumeroHabitacion(numHabitacion);
-        if(h != null){
+        if (h != null) {
             h.setClientes(huesped);
             h.setDisponible(false);
             return true;
         }
         return false;
     }
-    
+
     public Habitacion getIndiceHabitacion() {
         /**
          * Este medetodo consulta el ArreyList de Habitaciones donde se
@@ -149,4 +148,9 @@ public class Hotel {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "Direccion:" + direccion + "\n Barrio:"
+                + barrio;
+    }
 }
