@@ -5,7 +5,10 @@
  */
 package com.alejozepol.Punto1;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -21,8 +24,18 @@ public class Hotel {
     private String barrio;
     private int telefono;
     private List<Habitacion> habitacion;
+    private List<Confiteria> Productos;
+
     public int indice;
     int num = 0;
+
+    public List<Confiteria> getProducto() {
+        return Productos;
+    }
+
+    public void setProducto(List<Confiteria> Producto) {
+        this.Productos = Producto;
+    }
 
     public List<Habitacion> getHabitacion() {
         return habitacion;
@@ -83,16 +96,43 @@ public class Hotel {
 
     }
 
-    public boolean ocuparHabitacion(int numHabitacion, Huesped huesped) {
+    public boolean ocuparHabitacion(int numHabitacion, Huesped huesped, String fechaInicio, String fechaFin) {
         Habitacion h = consultarNumeroHabitacion(numHabitacion);
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        Date fechaDate = null;
+         Date f1 = null; 
+         Date f2 = null; 
+        try {
+            f1 = formato.parse(fechaInicio);
+            f2 = formato.parse(fechaFin);
+        } catch (ParseException ex) {
+            System.out.println(ex);
+        }
         if (h != null) {
             h.setClientes(huesped);
             h.setDisponible(false);
+            h.setFechaInicio(f1);
+            h.setFechaFin(f2);
             return true;
         }
         return false;
     }
-
+    public boolean despertar(String hora,int numHabitacion){
+        Habitacion h = consultarNumeroHabitacion(numHabitacion);
+         Date despertar = null;
+         SimpleDateFormat formato = new SimpleDateFormat("HH:mm");
+         try {
+            despertar = formato.parse(hora);
+        } catch (ParseException ex) {
+            System.out.println(ex);
+        }
+            if (h != null) {
+            h.setHoraDespertar(despertar);
+            return true;
+        }
+    
+     return false;
+    }
     public Habitacion getIndiceHabitacion() {
         /**
          * Este medetodo consulta el ArreyList de Habitaciones donde se
@@ -153,4 +193,5 @@ public class Hotel {
         return "Direccion:" + direccion + "\n Barrio:"
                 + barrio;
     }
+
 }

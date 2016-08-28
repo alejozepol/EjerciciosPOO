@@ -8,6 +8,8 @@
  */
 package edu.alejozepol.punto3;
 
+import static com.alejozepol.Punto1.Punto1.punto1;
+import edu.alejozepol.ejerciciospoo.Menu;
 import javax.swing.JOptionPane;
 
 /**
@@ -45,6 +47,12 @@ public class Punto3 {
             }
 
         } while (usu != u1.nomUsu);
+ int resp = JOptionPane.showConfirmDialog(null, "¿Desea seguir en el programa?");
 
+        if (JOptionPane.OK_OPTION == resp) {
+            logeo();
+        } else {
+            Menu.Menu();
+        }
     }
 }

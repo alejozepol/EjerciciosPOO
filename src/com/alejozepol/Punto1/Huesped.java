@@ -26,7 +26,9 @@ public class Huesped {
 
     @Override
     public String toString() {
-        return "Huesped{" + "nombre=" + nombre + ", direccion=" + direccion + ", profesion=" + profesion + ", estadioCivil=" + estadioCivil + '}';
+        return "nombre=" + nombre 
+                + "\n direccion=" + direccion + "\n profesion=" + profesion 
+                + "\n estadioCivil=" + estadioCivil;
     }
 
     

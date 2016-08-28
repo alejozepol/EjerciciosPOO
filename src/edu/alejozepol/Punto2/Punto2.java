@@ -5,6 +5,8 @@
  */
 package edu.alejozepol.Punto2;
 
+import static com.alejozepol.Punto1.Punto1.punto1;
+import edu.alejozepol.ejerciciospoo.Menu;
 import javax.swing.JOptionPane;
 
 /**
@@ -56,6 +58,13 @@ public class Punto2 {
         coleccion.desplegarPosicionesMultiplo(0);
         coleccion.promedioValores(0, 0);
         coleccion.invertir();
+         int resp = JOptionPane.showConfirmDialog(null, "¿Desea seguir en el programa?");
+
+        if (JOptionPane.OK_OPTION == resp) {
+            punto2();
+        } else {
+            Menu.Menu();
+        }
     }
 
 }

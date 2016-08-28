@@ -5,6 +5,8 @@
  */
 package com.alejozepol.Punto1;
 
+import java.util.Date;
+
 /**
  *
  * @author alejozepol
@@ -18,7 +20,50 @@ public class Habitacion {
     private boolean disponible;
     private int tipo;
     private Huesped clientes;
+
+    public Date getHoraDespertar() {
+        return horaDespertar;
+    }
+
+    public void setHoraDespertar(Date horaDespertar) {
+        this.horaDespertar = horaDespertar;
+    }
     private String nombreTipo;
+    private Date horaDespertar;
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getNombreTipo() {
+        return nombreTipo;
+    }
+
+    public void setNombreTipo(String nombreTipo) {
+        this.nombreTipo = nombreTipo;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+    private Date fechaInicio;
+    private Date fechaFin;
 
 //    private final String tipoHabitacion[] = {"Sencillo", "Doble","Suite"};
     public Habitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
@@ -91,8 +136,6 @@ public class Habitacion {
         }
         return nombreTipo;
     }
-
-    ;
 
     @Override
     public String toString() {

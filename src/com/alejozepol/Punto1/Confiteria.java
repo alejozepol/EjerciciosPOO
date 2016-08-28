@@ -4,13 +4,24 @@
  * and open the template in the editor.
  */
 package com.alejozepol.Punto1;
-
 /**
  *
  * @author alejozepol
  */
 public class Confiteria {
-    String bebidas []={"gaseosa","Agua Mineral con gas",
-                        "Agua Mineral con gas"};
-    String desayuno []={"Té con pan","Café con leche y pan"};
+    private String producto;
+
+    public Confiteria(String producto) {
+        this.producto = producto;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+ 
 }

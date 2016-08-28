@@ -5,6 +5,7 @@
  */
 package com.alejozepol.Punto1;
 
+import edu.alejozepol.ejerciciospoo.Menu;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,6 +26,9 @@ public class Punto1 {
         h1.addHabitacion(101, 1, 101, true, true, 0);
         h1.addHabitacion(102, 2, 102, false, true, 1);
         h1.addHabitacion(103, 3, 103, true, false, 2);
+        Huesped cliente1 = new Huesped("Jhon Fredy ", "CR 34 20 23", "Consultor", "Casado");
+        
+        
 
         JOptionPane.showMessageDialog(null,
                 "Un turista se registra en un hotel ubicado en una dirección, ciudad y barrio.\n"
@@ -40,37 +44,46 @@ public class Punto1 {
 
         Object opciones = JOptionPane.showInputDialog(null, "Seleccione la acción que quieres realizar:",
                 "Opciones", JOptionPane.QUESTION_MESSAGE, null,
-                new Object[]{"Revisar Informacion Hotel", "Revisar Informacion Hahbitaciones",
-                    "Registrar Huesped", "Consultar Huesped"}, "Seleccione");
+                new Object[]{"Revisar Informacion Hotel", "Revisar Informacion Habitaciones",
+                    "Revisar Informacion Habitacion", "Consultar Huesped", 
+                    "Asignar Huesped a la habitacion","Solicitar despertar","Perdir Producto Cafeteria"}, "Seleccione");
         if (opciones.equals("Revisar Informacion Hotel")) {
             JOptionPane.showMessageDialog(null, h1.toString());
+            
         } else if (opciones.equals("Revisar Informacion Hahbitaciones")) {
             JOptionPane.showMessageDialog(null, h1.getHabitacion().toString());
-        } else if (opciones.equals("Registrar Huesped")) {
-          
-            
-            Huesped cliente1 = new Huesped("jhon fredy ", "CR 34 20 23", "Consultor", "casado");  
             
         } else if (opciones.equals("Consultar Huesped")) {
+            JOptionPane.showMessageDialog(null, cliente1.toString());
+            
+        } else if (opciones.equals("Asignar Huesped a la habitacion")) {
+            String cs = JOptionPane.showInputDialog("Ingrese el numero de habitacion que quiere asignarle al huesped");
+            int num = Integer.parseInt(cs);
+            String fe1 = JOptionPane.showInputDialog("Ingrese la fecha de inicio");
+            String fe2 = JOptionPane.showInputDialog("Ingrese la fecha de Fin");
+            JOptionPane.showMessageDialog(null, h1.ocuparHabitacion(num, cliente1, fe1, fe2));
+            
+        } else if (opciones.equals("Revisar Informacion Habitacion")) {
+            String cs = JOptionPane.showInputDialog("Ingrese el numero de habitacion a consultar");
+            int num = Integer.parseInt(cs);
+            JOptionPane.showMessageDialog(null, h1.consultarNumeroHabitacion(num));
+        }else if (opciones.equals("Solicitar despertar")) {
+            String cs = JOptionPane.showInputDialog("Ingrese el numero de habitacion que quiere despertar");
+            int num = Integer.parseInt(cs);
+            String fe1 = JOptionPane.showInputDialog("Ingrese la hora:");
+            JOptionPane.showMessageDialog(null, h1.despertar(fe1, num));
+            
+        }else if (opciones.equals("Perdir Producto Cafeteria")) {
+            
         }
-//
-//        System.out.println(h1.getIndiceHabitacion());
-//
-//        h1.mostrar();
-//
-//        Huesped cliente1 = new Huesped("jhon fredy ", "CR 34 20 23", "Consultor", "casado");
-//
-//        System.out.println("Por Favor ingrese el numero de la Habitacion:");
-//        Scanner teclado = new Scanner(System.in);
-//        int num = teclado.nextInt();
-//
-//        if (h1.ocuparHabitacion(num, cliente1)) {
-//
-//        } else {
-//
-//        }
-//
-//        System.out.println(cliente1);
+        
+        int resp = JOptionPane.showConfirmDialog(null, "¿Desea seguir en el programa?");
+
+        if (JOptionPane.OK_OPTION == resp) {
+            punto1();
+        } else {
+            Menu.Menu();
+        }
 
     }
 
