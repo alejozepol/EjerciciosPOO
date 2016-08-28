@@ -24,17 +24,21 @@ public class Hotel {
     private String barrio;
     private int telefono;
     private List<Habitacion> habitacion;
-    private List<Confiteria> Productos;
-
+    private List<Confiteria> producto;
     public int indice;
-    int num = 0;
+    public int num = 0;
 
     public List<Confiteria> getProducto() {
-        return Productos;
+        return producto;
     }
 
     public void setProducto(List<Confiteria> Producto) {
-        this.Productos = Producto;
+        this.producto = Producto;
+    }
+
+    public void addProducto(int idProducto, String producto, long valor) {
+        Confiteria c = new Confiteria (idProducto, producto,valor);
+        this.producto.add(c);
     }
 
     public List<Habitacion> getHabitacion() {
@@ -43,6 +47,11 @@ public class Hotel {
 
     public void setHabitacion(List<Habitacion> habitacion) {
         this.habitacion = habitacion;
+    }
+
+    public void addHabitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
+        Habitacion a = new Habitacion(numeroHabitacion, numeroBaños, numeroExtencion, calefaccion, disponible, tipo);
+        habitacion.add(a);
     }
 
     public int getNum() {
@@ -76,6 +85,7 @@ public class Hotel {
         this.barrio = barrio;
         this.telefono = telefono;
         this.habitacion = new ArrayList<>();
+        this.producto= new ArrayList<>();
 
     }
 
@@ -87,9 +97,9 @@ public class Hotel {
          * @param indice el cual se encuentra solicitando por pantalla
          *
          */
-        for (Habitacion habitacion : habitacion) {
-            if (habitacion.getNumeroHabitacion() == numero && habitacion.isDisponible()) {
-                return habitacion;
+        for (Habitacion habitacion1 : habitacion) {
+            if (habitacion1.getNumeroHabitacion() == numero && habitacion1.isDisponible()) {
+                return habitacion1;
             }
         }
         return null;
@@ -100,8 +110,8 @@ public class Hotel {
         Habitacion h = consultarNumeroHabitacion(numHabitacion);
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
         Date fechaDate = null;
-         Date f1 = null; 
-         Date f2 = null; 
+        Date f1 = null;
+        Date f2 = null;
         try {
             f1 = formato.parse(fechaInicio);
             f2 = formato.parse(fechaFin);
@@ -117,22 +127,24 @@ public class Hotel {
         }
         return false;
     }
-    public boolean despertar(String hora,int numHabitacion){
+
+    public boolean despertar(String hora, int numHabitacion) {
         Habitacion h = consultarNumeroHabitacion(numHabitacion);
-         Date despertar = null;
-         SimpleDateFormat formato = new SimpleDateFormat("HH:mm");
-         try {
+        Date despertar = null;
+        SimpleDateFormat formato = new SimpleDateFormat("HH:mm");
+        try {
             despertar = formato.parse(hora);
         } catch (ParseException ex) {
             System.out.println(ex);
         }
-            if (h != null) {
+        if (h != null) {
             h.setHoraDespertar(despertar);
             return true;
         }
-    
-     return false;
+
+        return false;
     }
+
     public Habitacion getIndiceHabitacion() {
         /**
          * Este medetodo consulta el ArreyList de Habitaciones donde se
@@ -149,11 +161,6 @@ public class Hotel {
 
         return habitacion.get(indice);
 
-    }
-
-    public void addHabitacion(int numeroHabitacion, int numeroBaños, int numeroExtencion, boolean calefaccion, boolean disponible, int tipo) {
-        Habitacion a = new Habitacion(numeroHabitacion, numeroBaños, numeroExtencion, calefaccion, disponible, tipo);
-        habitacion.add(a);
     }
 
     public String getDireccion() {
