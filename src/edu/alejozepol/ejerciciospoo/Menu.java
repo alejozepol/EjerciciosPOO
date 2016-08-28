@@ -5,7 +5,7 @@
  */
 package edu.alejozepol.ejerciciospoo;
 
-import com.alejozepol.Punto1.Punto1;
+import edu.alejozepol.Punto1.Punto1;
 import edu.alejozepol.Punto2.Punto2;
 import edu.alejozepol.punto3.Punto3;
 import edu.alejozepol.punto5.Lista;
