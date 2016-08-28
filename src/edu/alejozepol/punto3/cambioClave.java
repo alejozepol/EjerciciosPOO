@@ -5,6 +5,8 @@
  */
 package edu.alejozepol.punto3;
 
+import edu.alejozepol.ejerciciospoo.Menu;
+import static edu.alejozepol.punto3.Punto3.logeo;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -146,6 +148,14 @@ public class cambioClave extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Contraseñano no son iguales", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
+        int resp = JOptionPane.showConfirmDialog(null, "¿Desea seguir en el programa?");
+
+        if (JOptionPane.OK_OPTION == resp) {
+            logeo();
+        } else {
+            Menu.Menu();
+        }
+        new cambioClave().setVisible(false);
 
     }//GEN-LAST:event_aceptoActionPerformed
 

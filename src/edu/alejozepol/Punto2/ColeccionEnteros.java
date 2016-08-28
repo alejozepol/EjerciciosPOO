@@ -31,7 +31,7 @@ public class ColeccionEnteros {
     }
 
     public void entrada() {
-        entrada = JOptionPane.showInputDialog(null, "Ingrese la cantidad de numeros que llenar el arreglo:");
+        entrada = JOptionPane.showInputDialog(null, "Ingrese la cantidad de numeros que llenaran el arreglo:");
 
         if (entrada != null && !entrada.contentEquals("")) {
             numero = (Integer.parseInt(entrada));

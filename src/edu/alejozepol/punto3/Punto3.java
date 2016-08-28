@@ -47,12 +47,6 @@ public class Punto3 {
             }
 
         } while (usu != u1.nomUsu);
- int resp = JOptionPane.showConfirmDialog(null, "¿Desea seguir en el programa?");
-
-        if (JOptionPane.OK_OPTION == resp) {
-            logeo();
-        } else {
-            Menu.Menu();
-        }
+        
     }
 }

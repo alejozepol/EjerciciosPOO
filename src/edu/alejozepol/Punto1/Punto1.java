@@ -6,7 +6,6 @@
 package edu.alejozepol.Punto1;
 
 import edu.alejozepol.ejerciciospoo.Menu;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**

@@ -60,7 +60,7 @@ public class ventana extends javax.swing.JFrame {
 
     private void camClavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camClavActionPerformed
         new cambioClave().setVisible(true);
-
+         
 
     }//GEN-LAST:event_camClavActionPerformed
 

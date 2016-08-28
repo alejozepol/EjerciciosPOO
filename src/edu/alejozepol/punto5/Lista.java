@@ -61,7 +61,6 @@ public class Lista {
             }
               
         } else {
-            System.err.println("sas");
             Menu.Menu();
         }
 
