@@ -29,7 +29,7 @@ public class Lista {
                 + "c.Imprima los elementos cargados en la colección usando un iterador.\n"
                 + "d.Cargue el Número contenido en la posición 14 de la colección.\n"
                 + "e.Imprima el elemento 14 de la lista.\n"
-                + "f.Itere la lista imprimiendo sólo los números s., sc);\n");
+                + "f.Itere la lista imprimiendo sólo los números sc);\n");
 
         int numero;
         String teclado;

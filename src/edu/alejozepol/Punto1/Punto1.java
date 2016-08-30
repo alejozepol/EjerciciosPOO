@@ -1,10 +1,9 @@
-/*
- * Esta clase es la principal del paquete la cual se utiliza para acceder al
-* desarrollo del punto 1 del taller del Programacion Orientado a Objetos del 
+/***
+* Esta clase es la principal del paquete la cual se utiliza para acceder al
+* desarrollo del punto 2 del taller del Programacion Orientado a Objetos del 
 * programada de ADSI- SENA 1068180
- */
+**/
 package edu.alejozepol.Punto1;
-
 import edu.alejozepol.ejerciciospoo.Menu;
 import javax.swing.JOptionPane;
 
